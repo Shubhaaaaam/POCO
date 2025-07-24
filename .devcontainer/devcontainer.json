@@ -1,0 +1,16 @@
+// .devcontainer/devcontainer.json
+{
+    "name": "P2P Overlay with Poco (Debian)",
+    "image": "mcr.microsoft.com/devcontainers/cpp:debian-11", // Explicitly use Debian 11
+    "features": {}, // We will handle package installation in postCreateCommand for clarity
+    "postCreateCommand": "sudo apt update && sudo apt install -y libpoco-dev cmake && cd /workspaces/blank/build && cmake .. -DCMAKE_BUILD_TYPE=Debug",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools-extension-pack"
+            ]
+        }
+    }
+}

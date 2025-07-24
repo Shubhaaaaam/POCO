@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Node.h
+string
+-
+set
+-
+mutex
+-
+memory
+-
+Poco/Net/TCPServer.h
+-
+Poco/Net/TCPServerConnectionFactory.h
+-
+
+/workspaces/blank/src/main.cpp
+Node.h
+/workspaces/blank/src/Node.h
+iostream
+-
+thread
+-
+chrono
+-
+atomic
+-
+
