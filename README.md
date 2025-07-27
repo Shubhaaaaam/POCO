@@ -1,126 +1,44 @@
+# P2P Network Overlay
 
-🔸 Peer-to-Peer (P2P) Network Overlay - C++ with Poco
+This project implements a decentralized Peer-to-Peer (P2P) overlay network in C++ using the Poco C++ Libraries. Nodes can dynamically join, exchange messages, and broadcast across the network without relying on a central server.
 
-This project implements a decentralized Peer-to-Peer (P2P) overlay network in C++ using the Poco C++ Libraries. Nodes can dynamically join, exchange messages, and broadcast across the network without a central server.
+## 🌟 Features
 
-🚀 Features
+* **Dynamic Node Discovery:** Nodes can join the network using a JOIN protocol.
+* **✉️ Message Exchange:** Direct communication between peers.
+* **🎤 Broadcasting:** Send messages to all known peers.
+* **⚖️ Thread-Safe Peer Registry:** Mutex-based safe peer management.
+* **⌨️ Interactive CLI:** Command-line tool for managing peers and messages.
+* **💡 Modular Design:** Classes for node, connection, messaging, and factories.
 
-🌐 Dynamic node discovery (JOIN protocol)
+## ⚙️ Installation
 
-🔄 Real-time peer-to-peer message exchange
+Follow these steps to set up the project locally:
 
-📢 Broadcast messages to all known peers
+1.  **Clone the Repository:**
 
-🥵 Thread-safe peer registry
+    ```bash
+    git clone [https://github.com/Shubhaaaaam/POCO.git](https://github.com/Shubhaaaaam/POCO.git)
+    cd POCO
+    ```
 
-💻 CLI interface for interaction
+2.  **Install Dependencies:**
 
-⚙️ Built using Poco C++ Libraries
+    ```bash
+    sudo apt-get install libpoco-dev  # For Debian/Ubuntu systems
+    ```
 
-🏧 Architecture
+3.  **Build with CMake:**
 
-🏈 Node A ➜ JOIN ➜ Node B
-   (9000)                    (9001)
-    └➜ CLI                └➜ CLI
-     └➜ Server            └➜ Server
-      └➜ SEND ←→ DATA ←→ JOIN
+    ```bash
+    mkdir build && cd build
+    cmake ..
+    make
+    ```
 
-Core Components
+## 🌐 Running the Application
 
-File
+**Start Node A (listener):**
 
-Description
-
-main.cpp
-
-CLI runner & bootstrap logic
-
-Node.{h,cpp}
-
-Server, client, peer tracking
-
-PeerConnection.{h,cpp}
-
-Handles incoming messages per connection
-
-PeerConnectionFactory
-
-Factory for socket handling threads
-
-P2PMessage.{h,cpp}
-
-Message serialization and parsing
-
-🧰 Dependencies
-
-C++17 or higher
-
-Poco C++ Libraries
-
-cmake
-
-⚙️ Build Instructions
-
-git clone https://github.com/yourusername/p2p-overlay-cpp.git
-cd p2p-overlay-cpp
-mkdir build && cd build
-cmake ..
-make
-
-▶️ Run Instructions
-
-Start a Node A (Server mode)
-
+```bash
 ./P2P_Node 9000
-
-Start Node B and connect to A
-
-./P2P_Node 9001 127.0.0.1 9000
-
-🧪 CLI Commands
-
-Command
-
-Description
-
-peers
-
-List connected peers
-
-send <peer> <msg>
-
-Send a direct message
-
-broadcast <msg>
-
-Send message to all known peers
-
-exit
-
-Exit the node
-
-Example:
-
-send 127.0.0.1:9000 Hello from Node B!
-broadcast Hello everyone!
-
-🤩 Future Enhancements
-
-TLS-secured communication
-
-Persistent peer caching
-
-NAT traversal (UDP hole punching)
-
-GUI or web interface for peer maps
-
-Heartbeat monitoring for peer liveness
-
-🧑‍💻 Author
-
-ShubhaaaaamBuilt as a multi-day networking overlay project in C++.
-
-📄 License
-
-This project is licensed under the MIT License.
-
